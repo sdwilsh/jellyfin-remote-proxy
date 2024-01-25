@@ -1103,9 +1103,9 @@ dependencies = [
 
 [[package]]
 name = "sozu-command-lib"
-version = "0.15.18"
+version = "0.15.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b39c308a4c66ec609811f19bde4b9b884a8cfca6d2b644fe5ec5c81af271fbc4"
+checksum = "bd506b744d756642e5daf724b1f09dbb52643e853fd8c3e3d51cdd44f5d8de8f"
 dependencies = [
  "hex",
  "libc",
