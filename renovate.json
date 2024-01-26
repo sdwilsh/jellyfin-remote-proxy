@@ -1,6 +1,36 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^Earthfile$"
+      ],
+      "matchStrings": [
+        "#\\s*renovate:\\s*datasource=(?<datasource>.*?)\\s+depName=(?<depName>.*?)(\\s+versioning=(?<versioning>.*?))?\\s+ARG\\s+.+_VERSION=(?<currentValue>.*?)\\s"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^earthly\\.sh$"
+      ],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "earthly/earthly",
+      "matchStrings": [
+        "earthly\\/earthly:(?<currentValue>.*?)\\s"
+      ],
+      "versioningTemplate": "semver-coerced"
+    }
+  ],
   "extends": [
     "config:recommended"
+  ],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^sozu"],
+      "groupName": "sozu"
+    }
   ]
 }
