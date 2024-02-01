@@ -7,7 +7,7 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.79"
-env_logger = "0.11.0"
+env_logger = "0.11.1"
 log = "0.4.20"
 nix = { version = "0.27.1", features = ["net", "socket"] }
 serde = "1.0.195"
