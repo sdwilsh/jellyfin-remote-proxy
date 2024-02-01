@@ -1,6 +1,7 @@
 extern crate time;
 
 use std::net::SocketAddr;
+use std::net::SocketAddrV4;
 use std::thread::{self};
 
 use anyhow::Context;
@@ -38,7 +39,7 @@ fn get_backend(remote_address: &SocketAddr) -> AddBackend {
     };
 }
 
-fn get_frontend(local_address: &SocketAddr) -> RequestHttpFrontend {
+fn get_frontend(local_address: &SocketAddrV4) -> RequestHttpFrontend {
     return RequestHttpFrontend {
         cluster_id: Some(CLUSTER_ID.to_string()),
         address: local_address.to_string(),
@@ -49,13 +50,13 @@ fn get_frontend(local_address: &SocketAddr) -> RequestHttpFrontend {
     };
 }
 
-fn get_listener(local_address: &SocketAddr) -> HttpListenerConfig {
+fn get_listener(local_address: &SocketAddrV4) -> HttpListenerConfig {
     return ListenerBuilder::new_http(local_address)
         .to_http(None)
         .expect("Could not create a listener to proxy Jellyfin!");
 }
 
-pub fn run(local_address: &SocketAddr, remote_address: &SocketAddr) {
+pub fn run(local_address: &SocketAddrV4, remote_address: &SocketAddr) {
     let (mut command_channel, proxy_channel) = Channel::generate(1000, 10000)
         .with_context(|| "should create a channel!")
         .expect("Creating channels failed!");

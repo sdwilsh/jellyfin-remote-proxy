@@ -514,6 +514,7 @@ dependencies = [
  "anyhow",
  "env_logger",
  "log 0.4.20",
+ "nix",
  "serde",
  "serde_json",
  "serde_yaml",

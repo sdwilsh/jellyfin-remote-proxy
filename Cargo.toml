@@ -9,6 +9,7 @@ edition = "2021"
 anyhow = "1.0.79"
 env_logger = "0.11.0"
 log = "0.4.20"
+nix = { version = "0.27.1", features = ["net", "socket"] }
 serde = "1.0.195"
 serde_json = "1.0.111"
 serde_yaml = "0.9.30"

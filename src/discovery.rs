@@ -1,6 +1,7 @@
 use std::net::IpAddr;
 use std::net::Ipv4Addr;
 use std::net::SocketAddr;
+use std::net::SocketAddrV4;
 use std::net::UdpSocket;
 use std::str;
 use std::thread::{self, JoinHandle};
@@ -58,7 +59,7 @@ pub fn query_proxied_server(remote_address: &IpAddr) -> DiscoveryResponse {
 
 pub fn start(
     discovery_response: DiscoveryResponse,
-    local_socket_address: &SocketAddr,
+    local_socket_address: &SocketAddrV4,
 ) -> JoinHandle<()> {
     let response = serde_json::to_string(&DiscoveryResponse {
         address: format!("http://{}", local_socket_address.to_string().as_str()),

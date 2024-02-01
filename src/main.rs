@@ -18,7 +18,7 @@ fn main() {
 
     let remote_address = config.remote.as_ip_addr();
     let discovery_response = query_proxied_server(&remote_address);
-    let local_socket_address = config.local.as_socket_addr();
+    let local_socket_address = config.local.as_socket_addrs().last().expect("No address found on specified interface to bind to!");
     let remote_socket_address = SocketAddr::new(remote_address, discovery_response.get_port());
     let disocvery_service_handle = discovery::start(discovery_response, &local_socket_address);
     proxy::run(&local_socket_address, &remote_socket_address);
