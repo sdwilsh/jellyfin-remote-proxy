@@ -10,7 +10,7 @@ anyhow = "1.0.79"
 env_logger = "0.11.1"
 log = "0.4.20"
 nix = { version = "0.27.1", features = ["net", "socket"] }
-serde = "1.0.195"
+serde = "1.0.196"
 serde_json = "1.0.113"
 serde_yaml = "0.9.31"
 sozu-command-lib = "0.15.19"
