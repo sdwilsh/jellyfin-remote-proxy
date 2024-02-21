@@ -24,7 +24,6 @@ jobs:
       - name: Run release-plz
         uses: MarcoIeni/release-plz-action@v0.5
         with:
-          command: release-pr
           # renovate: datasource=github-releases depName=MarcoIeni/release-plz
           version: "release-plz-v0.3.45"
         env:
