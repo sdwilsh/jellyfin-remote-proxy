@@ -10,7 +10,7 @@ version = "0.1.1"
 
 [dependencies]
 anyhow = "1.0.80"
-env_logger = "0.11.2"
+env_logger = "0.11.3"
 log = "0.4.20"
 nix = { version = "0.27.1", features = ["net", "socket"] }
 serde = "1.0.197"
