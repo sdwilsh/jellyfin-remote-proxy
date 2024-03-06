@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.1...v0.1.2) - 2024-03-06
+
+### Fixed
+- *(deps)* update rust crate log to 0.4.21
+- *(deps)* update rust crate env_logger to 0.11.3
+
+### Other
+- Merge pull request [#27](https://github.com/sdwilsh/jellyfin-remote-proxy/pull/27) from sdwilsh/dependabot/cargo/mio-0.8.11
+
 ## [0.1.1](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.0...v0.1.1) - 2024-02-26
 
 ### Other
