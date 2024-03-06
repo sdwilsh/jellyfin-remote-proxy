@@ -311,21 +311,21 @@ version = "0.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a009aa4810eb158359dda09d0c87378e4bbb89b5a801f016885a4707ba24f7ea"
 dependencies = [
- "log 0.4.20",
+ "log 0.4.21",
  "regex",
 ]
 
 [[package]]
 name = "env_logger"
-version = "0.11.2"
+version = "0.11.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6c012a26a7f605efc424dd53697843a72be7dc86ad2d01f7814337794a12231d"
+checksum = "38b35839ba51819680ba087cd351788c9a3c476841207e0b8cee0b04722343b9"
 dependencies = [
  "anstream",
  "anstyle",
  "env_filter",
  "humantime",
- "log 0.4.20",
+ "log 0.4.21",
 ]
 
 [[package]]
@@ -510,7 +510,7 @@ version = "0.1.1"
 dependencies = [
  "anyhow",
  "env_logger",
- "log 0.4.20",
+ "log 0.4.21",
  "nix",
  "serde",
  "serde_json",
@@ -565,14 +565,14 @@ version = "0.3.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e19e8d5c34a3e0e2223db8e060f9e8264aeeb5c5fc64a4ee9965c062211c024b"
 dependencies = [
- "log 0.4.20",
+ "log 0.4.21",
 ]
 
 [[package]]
 name = "log"
-version = "0.4.20"
+version = "0.4.21"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b5e6163cb8c49088c2c36f57875e58ccd8c87c7427f7fbd50ea6710b2f3f2e8f"
+checksum = "90ed8c1e510134f979dbc4f070f87d4313098b704861a105fe34231c70a3901c"
 
 [[package]]
 name = "memchr"
@@ -611,7 +611,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8f3d0b296e374a4e6f3c7b0a1f5a51d748a0d34c85e7dc48fc3fa9a87657fe09"
 dependencies = [
  "libc",
- "log 0.4.20",
+ "log 0.4.21",
  "wasi",
  "windows-sys 0.48.0",
 ]
@@ -788,7 +788,7 @@ dependencies = [
  "bytes",
  "heck",
  "itertools",
- "log 0.4.20",
+ "log 0.4.21",
  "multimap",
  "once_cell",
  "petgraph",
@@ -954,7 +954,7 @@ version = "0.22.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e87c9956bd9807afa1f77e0f7594af32566e830e088a5576d27c5b6f30f49d41"
 dependencies = [
- "log 0.4.20",
+ "log 0.4.21",
  "ring",
  "rustls-pki-types",
  "rustls-webpki",
@@ -1103,7 +1103,7 @@ checksum = "bd506b744d756642e5daf724b1f09dbb52643e853fd8c3e3d51cdd44f5d8de8f"
 dependencies = [
  "hex",
  "libc",
- "log 0.4.20",
+ "log 0.4.21",
  "memchr",
  "mio",
  "nix",
