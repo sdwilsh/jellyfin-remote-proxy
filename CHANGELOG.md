@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.3](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.2...v0.1.3) - 2024-03-25
+
+### Fixed
+- *(deps)* update rust crate serde_yaml to 0.9.33
+
+### Other
+- Merge pull request [#35](https://github.com/sdwilsh/jellyfin-remote-proxy/pull/35) from sdwilsh/renovate/earthly-earthly-0.x
+- *(deps)* update earthly/earthly docker tag to v0.8.6
+- Merge pull request [#32](https://github.com/sdwilsh/jellyfin-remote-proxy/pull/32) from sdwilsh/renovate/anyhow-1.x
+- *(deps)* update earthly/earthly docker tag to v0.8.5
+
 ## [0.1.2](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.1...v0.1.2) - 2024-03-06
 
 ### Fixed
