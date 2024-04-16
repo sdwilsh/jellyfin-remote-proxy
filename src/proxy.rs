@@ -1,7 +1,6 @@
 extern crate time;
 
-use std::net::SocketAddr;
-use std::net::SocketAddrV4;
+use std::net::{SocketAddr, SocketAddrV4};
 use std::thread::{self};
 
 use anyhow::Context;
@@ -12,9 +11,8 @@ use sozu_command_lib::{
     config::ListenerBuilder,
     proto::command::{
         request::RequestType, AddBackend, Cluster, HttpListenerConfig, LoadBalancingAlgorithms,
-        LoadBalancingParams, PathRule, RequestHttpFrontend, RulePosition,
+        LoadBalancingParams, PathRule, RequestHttpFrontend, RulePosition, SocketAddress, WorkerRequest,
     },
-    request::WorkerRequest,
 };
 
 const CLUSTER_ID: &'static str = "jellyfin-remote-proxy";
@@ -33,7 +31,7 @@ fn get_backend(remote_address: &SocketAddr) -> AddBackend {
     return AddBackend {
         cluster_id: CLUSTER_ID.to_string(),
         backend_id: "jellyfin-actual".to_string(),
-        address: remote_address.clone().to_string(),
+        address: SocketAddress::from(remote_address.clone()),
         load_balancing_parameters: Some(LoadBalancingParams::default()),
         ..Default::default()
     };
@@ -42,7 +40,7 @@ fn get_backend(remote_address: &SocketAddr) -> AddBackend {
 fn get_frontend(local_address: &SocketAddrV4) -> RequestHttpFrontend {
     return RequestHttpFrontend {
         cluster_id: Some(CLUSTER_ID.to_string()),
-        address: local_address.to_string(),
+        address: SocketAddress::from(SocketAddr::from(local_address.clone())),
         hostname: local_address.ip().to_string(),
         path: PathRule::prefix(String::from("/")),
         position: RulePosition::Pre.into(),
@@ -51,7 +49,7 @@ fn get_frontend(local_address: &SocketAddrV4) -> RequestHttpFrontend {
 }
 
 fn get_listener(local_address: &SocketAddrV4) -> HttpListenerConfig {
-    return ListenerBuilder::new_http(local_address)
+    return ListenerBuilder::new_http(SocketAddress::from(SocketAddr::from(local_address.clone())))
         .to_http(None)
         .expect("Could not create a listener to proxy Jellyfin!");
 }
@@ -65,7 +63,7 @@ pub fn run(local_address: &SocketAddrV4, remote_address: &SocketAddr) {
     let worker_thread_join_handle = thread::spawn(move || {
         let max_buffers = 500;
         let buffer_size = 16384;
-        sozu_lib::http::start_http_worker(listener, proxy_channel, max_buffers, buffer_size)
+        sozu_lib::http::testing::start_http_worker(listener, proxy_channel, max_buffers, buffer_size)
             .expect("The worker could not be started, or has shut down!");
     });
 
