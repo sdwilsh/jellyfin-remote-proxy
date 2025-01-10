@@ -3,6 +3,10 @@
 default:
     @just --list
 
+# Build the application
+build:
+    cargo build --verbose
+
 # Fixes Rust syntax
 [group('format')]
 [group('lint')]
@@ -49,6 +53,10 @@ lint: cargo-format hadolint just-check just-format renovate-validate yamllint
 [group('lint')]
 renovate-validate:
     renovate-config-validator
+
+# Test the application
+test:
+    cargo test --verbose
 
 # Check YAML files with yamllint
 [group('lint')]
