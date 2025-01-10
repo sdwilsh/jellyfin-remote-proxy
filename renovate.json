@@ -36,8 +36,15 @@
       ]
     },
     {
-      "matchPackagePatterns": ["^sozu"],
-      "groupName": "sozu"
+      "automerge": true,
+      "automergeType": "branch",
+      "groupName": "sozu",
+      "matchPackagePatterns": [
+        "^sozu"
+      ],
+      "schedule": [
+        "after 4pm on friday"
+      ]
     }
   ]
 }
