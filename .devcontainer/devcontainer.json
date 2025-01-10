@@ -1,0 +1,31 @@
+{
+    "build": {
+        "cacheFrom": "ghcr.io/sdwilsh/jellyfin-remote-proxy-devcontainer:latest",
+        "context": "..",
+        "dockerfile": "./Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "github.vscode-github-actions",
+				"ms-azuretools.vscode-docker",
+                "rust-lang.rust-analyzer"
+            ],
+            "settings": {
+                "rust-analyzer.linkedProjects": [
+                    "./Cargo.toml"
+                ]
+            }
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installZsh": "false",
+            "userGid": "1000",
+            "userUid": "1000",
+            "username": "vscode"
+        },
+        "ghcr.io/devcontainers/features/rust:1": "latest"
+    },
+	"remoteUser": "vscode"
+}
