@@ -4,39 +4,37 @@
     {
       "customType": "regex",
       "fileMatch": [
-        "^\\.github/workflows/.*\\.yml$"
+        "^.devcontainer/devcontainer.json$"
       ],
       "matchStrings": [
-        "#\\s*renovate:\\s*datasource=(?<datasource>.*?)\\s+depName=(?<depName>.*?)\\s+(?:[a-z\\-_]+)?version:\\s+\"(?<currentValue>.*?)\""
+        "\\srenovate:\\s+datasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)\\n\\s*\"[a-z]+\":\\s+\"(?<currentValue>.*?)\""
       ]
     },
     {
       "customType": "regex",
       "fileMatch": [
-        "^Earthfile$"
+        "^\\.github/workflows/.*\\.yml$"
       ],
       "matchStrings": [
-        "#\\s*renovate:\\s*datasource=(?<datasource>.*?)\\s+depName=(?<depName>.*?)(\\s+versioning=(?<versioning>.*?))?\\s+ARG\\s+.+_VERSION=(?<currentValue>.*?)\\s"
-      ],
-      "versioningTemplate": "{{#if versioning}}{{versioning}}{{else}}semver{{/if}}"
-    },
-    {
-      "customType": "regex",
-      "fileMatch": [
-        "^earthly\\.sh$"
-      ],
-      "datasourceTemplate": "docker",
-      "depNameTemplate": "earthly/earthly",
-      "matchStrings": [
-        "earthly\\/earthly:(?<currentValue>.*?)\\s"
-      ],
-      "versioningTemplate": "semver-coerced"
+        "#\\s*renovate:\\s*datasource=(?<datasource>.*?)\\s+depName=(?<depName>.*?)\\s+(?:[a-z\\-_]+)?version:\\s+\"(?<currentValue>.*?)\""
+      ]
     }
   ],
   "extends": [
     "config:recommended"
   ],
   "packageRules": [
+    {
+      "automerge": true,
+      "automergeType": "branch",
+      "groupName": "renovate",
+      "matchPackageNames": [
+        "renovatebot/renovate"
+      ],
+      "schedule": [
+        "after 4pm on friday"
+      ]
+    },
     {
       "matchPackagePatterns": ["^sozu"],
       "groupName": "sozu"

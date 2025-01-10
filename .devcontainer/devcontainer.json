@@ -25,7 +25,26 @@
             "userUid": "1000",
             "username": "vscode"
         },
-        "ghcr.io/devcontainers/features/rust:1": "latest"
+        "ghcr.io/devcontainers/features/rust:1": {
+			// renovate: datasource=github-releases depName=rust-lang/rust
+			"version": "1.84.0"
+        },
+        "ghcr.io/dhoeric/features/hadolint:1": {
+			// renovate: datasource=github-releases depName=hadolint/hadolint
+			"version": "2.12.0"
+		},
+		"ghcr.io/guiyomh/features/just:0": {
+			// renovate: datasource=github-releases depName=casey/just
+			"version": "1.38.0"
+		},
+		"ghcr.io/devcontainers-extra/features/renovate-cli:2": {
+			// renovate: datasource=github-releases depName=renovatebot/renovate
+			"version": "39.91.0"
+		},
+		"ghcr.io/devcontainers-extra/features/yamllint:2": {
+			// renovate: datasource=pypi depName=yamllint
+			"version": "1.35.1"
+		}
     },
 	"remoteUser": "vscode"
 }
