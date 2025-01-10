@@ -27,9 +27,17 @@
     {
       "automerge": true,
       "automergeType": "branch",
-      "groupName": "renovate",
+      "groupName": "automerge",
       "matchPackageNames": [
-        "renovatebot/renovate"
+        "anyhow",
+        "env_logger",
+        "log",
+        "nix",
+        "renovatebot/renovate",
+        "serde",
+        "serde_json",
+        "serde_yaml",
+        "url"
       ],
       "schedule": [
         "after 4pm on friday"
