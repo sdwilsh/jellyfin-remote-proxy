@@ -11,7 +11,8 @@ use sozu_command_lib::{
     config::ListenerBuilder,
     proto::command::{
         request::RequestType, AddBackend, Cluster, HttpListenerConfig, LoadBalancingAlgorithms,
-        LoadBalancingParams, PathRule, RequestHttpFrontend, RulePosition, SocketAddress, WorkerRequest,
+        LoadBalancingParams, PathRule, RequestHttpFrontend, RulePosition, SocketAddress,
+        WorkerRequest,
     },
 };
 
@@ -63,8 +64,13 @@ pub fn run(local_address: &SocketAddrV4, remote_address: &SocketAddr) {
     let worker_thread_join_handle = thread::spawn(move || {
         let max_buffers = 500;
         let buffer_size = 16384;
-        sozu_lib::http::testing::start_http_worker(listener, proxy_channel, max_buffers, buffer_size)
-            .expect("The worker could not be started, or has shut down!");
+        sozu_lib::http::testing::start_http_worker(
+            listener,
+            proxy_channel,
+            max_buffers,
+            buffer_size,
+        )
+        .expect("The worker could not be started, or has shut down!");
     });
 
     debug!("Adding cluster...");
