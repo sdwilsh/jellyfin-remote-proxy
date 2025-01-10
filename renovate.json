@@ -47,8 +47,8 @@
       "automerge": true,
       "automergeType": "branch",
       "groupName": "sozu",
-      "matchPackagePatterns": [
-        "^sozu"
+      "matchPackageNames": [
+        "/^sozu/"
       ],
       "schedule": [
         "after 4pm on friday"
