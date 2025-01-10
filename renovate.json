@@ -54,5 +54,6 @@
         "after 4pm on friday"
       ]
     }
-  ]
+  ],
+  "timezone": "America/Los_Angeles"
 }
