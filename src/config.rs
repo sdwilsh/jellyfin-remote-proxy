@@ -1,7 +1,7 @@
 use std::{fs::File, net::IpAddr, net::Ipv4Addr, net::SocketAddrV4};
 
 use serde::Deserialize;
-use serde_yaml::from_reader;
+use serde_yml::from_reader;
 
 #[derive(Debug, Deserialize)]
 pub struct Config {
