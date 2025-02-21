@@ -1,4 +1,4 @@
-FROM rust:1.84-slim-bookworm
+FROM rust:1.85-slim-bookworm
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y install --no-install-recommends \
