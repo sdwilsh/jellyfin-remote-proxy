@@ -36,10 +36,10 @@ jobs:
       - name: Setup Platform-Specific Tag
         run: |
           if [[ "${{ matrix.runner }}" == *"arm" ]]; then
-            echo "DEFAULT_TAG=dev-arm64" >> ${GITHUB_ENV}
+            echo "DEFAULT_TAG=${{ github.ref_name }}-arm64" >> ${GITHUB_ENV}
             echo "PLATFORM=linux/arm64" >> ${GITHUB_ENV}
           else
-            echo "DEFAULT_TAG=dev-amd64" >> ${GITHUB_ENV}
+            echo "DEFAULT_TAG=${{ github.ref_name }}-amd64" >> ${GITHUB_ENV}
             echo "PLATFORM=linux/amd64" >> ${GITHUB_ENV}
           fi
 
@@ -52,6 +52,12 @@ jobs:
       - name: Image Metadata
         uses: docker/metadata-action@c1e51972afc2121e065aed6d45c65596fe445f3f # v5
         id: metadata
+        with:
+          tags: |
+            type=raw,value=${{ env.DEFAULT_TAG }}
+            type=raw,value=${{ env.DEFAULT_TAG }}.{{date 'YYYYMMDD'}}
+            type=sha,enable=${{ github.event_name == 'pull_request' }}
+            type=ref,event=pr
 
       - name: Build Image
         id: build_image
