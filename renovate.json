@@ -46,6 +46,17 @@
     {
       "automerge": true,
       "automergeType": "branch",
+      "groupName": "rust",
+      "matchPackageNames": [
+        "/^rust/"
+      ],
+      "schedule": [
+        "after 4pm on friday"
+      ]
+    },
+    {
+      "automerge": true,
+      "automergeType": "branch",
       "groupName": "sozu",
       "matchPackageNames": [
         "/^sozu/"
