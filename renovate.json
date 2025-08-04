@@ -48,6 +48,17 @@
     {
       "automerge": true,
       "automergeType": "branch",
+      "groupName": "release-plz",
+      "matchPackageNames": [
+        "/release-plz/"
+      ],
+      "schedule": [
+        "after 4pm on friday"
+      ]
+    },
+    {
+      "automerge": true,
+      "automergeType": "branch",
       "groupName": "rust",
       "matchPackageNames": [
         "/^rust/"
