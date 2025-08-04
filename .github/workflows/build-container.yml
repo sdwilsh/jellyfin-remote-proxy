@@ -1,5 +1,5 @@
 ---
-name: Build Mack OS Container Image
+name: Build Container Image
 on:
   pull_request:
     branches:
