@@ -27,7 +27,7 @@ RUN cargo chef cook --release --recipe-path recipe.json
 COPY --from=ctx . .
 RUN cargo build --release --bin jellyfin-remote-proxy
 
-FROM debian:bookworm-slim AS runtime
+FROM debian:bookworm-slim@sha256:2424c1850714a4d94666ec928e24d86de958646737b1d113f5b2207be44d37d8 AS runtime
 WORKDIR /app
 COPY --from=builder /app/target/release/jellyfin-remote-proxy /usr/local/bin/jellyfin-remote-proxy
 ENTRYPOINT ["/usr/local/bin/jellyfin-remote-proxy"]
