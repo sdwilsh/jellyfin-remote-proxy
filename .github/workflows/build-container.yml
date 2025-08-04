@@ -119,7 +119,6 @@ jobs:
         with:
           tags: |
             type=raw,value=${{ github.ref_name }}
-            type=raw,value=${{ github.ref_name }}.{{date 'YYYYMMDD'}}
             type=sha,enable=${{ github.event_name == 'pull_request' }}
             type=ref,event=pr
 
