@@ -3,8 +3,8 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": [
-        "^.devcontainer/devcontainer.json$"
+      "managerFilePatterns": [
+        "/^.devcontainer/devcontainer.json$/"
       ],
       "matchStrings": [
         "\\srenovate:\\s+datasource=(?<datasource>.*?)\\sdepName=(?<depName>.*?)\\n\\s*\"[a-z]+\":\\s+\"(?<currentValue>.*?)\""
@@ -12,8 +12,8 @@
     },
     {
       "customType": "regex",
-      "fileMatch": [
-        "^\\.github/workflows/.*\\.yml$"
+      "managerFilePatterns": [
+        "/^\\.github/workflows/.*\\.yml$/"
       ],
       "matchStrings": [
         "#\\s*renovate:\\s*datasource=(?<datasource>.*?)\\s+depName=(?<depName>.*?)(\\s+versioning=(?<versioning>.*?))?\\s+(?:[a-z\\-_]+)?version:\\s+\"(?<currentValue>.*?)\""
