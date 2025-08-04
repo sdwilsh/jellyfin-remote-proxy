@@ -23,6 +23,11 @@ hadolint:
         hadolint ${file}
         echo "{{ BOLD + GREEN }}OK{{ NORMAL }}"
     done
+    find . -type f -name "Containerfile*" | while read -r file; do
+        echo -n "Running \`hadolint\` on ${file}..."
+        hadolint ${file}
+        echo "{{ BOLD + GREEN }}OK{{ NORMAL }}"
+    done
 
 # Check `just` syntax
 [group('lint')]
