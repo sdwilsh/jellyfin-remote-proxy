@@ -29,17 +29,20 @@
     {
       "automerge": true,
       "automergeType": "branch",
-      "groupName": "automerge",
+      "groupName": "rust-deps",
+      "matchManagers": [
+        "cargo"
+      ],
+      "schedule": [
+        "after 4pm on friday"
+      ]
+    },
+    {
+      "automerge": true,
+      "automergeType": "branch",
+      "groupName": "renovate",
       "matchPackageNames": [
-        "anyhow",
-        "env_logger",
-        "log",
-        "nix",
-        "renovatebot/renovate",
-        "serde",
-        "serde_json",
-        "serde_yml",
-        "url"
+        "renovatebot/renovate"
       ],
       "schedule": [
         "after 4pm on friday"
