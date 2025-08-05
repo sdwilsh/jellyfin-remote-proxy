@@ -1,4 +1,88 @@
 # Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+## [0.1.3](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.2...v0.1.3) - 2025-08-05
+
+### Added
+
+- make a manifest for multiplatform images
+- tag more sensibly
+- build container images for development
+- build a container
+- group release-plz updates together
+- switch to using marinatedconcrete renovate configs
+
+### Fixed
+
+- drop date from manifest tags
+- fix yamllint
+- yamllint
+- push the container to the right path
+- actually pass in the `Containerfile`
+- rename build from copypasta
+- be more loose about line length of yaml
+- use semver for versioning
+- `crate` is the name of the datasource, even though the issues shows it as `cargo`
+- switch to cargo datasource for renovate for release-plz
+- do not include v in release-plz version
+- maybe fix release-plz install issue
+- group rust updates
+- *(deps)* update automerge
+- *(deps)* update automerge
+- *(deps)* update automerge
+- *(deps)* update automerge
+- *(deps)* update sozu to v1.0.6 ([#57](https://github.com/sdwilsh/jellyfin-remote-proxy/pull/57))
+- *(deps)* update automerge
+- *(deps)* update sozu to v1
+- *(deps)* update rust crate time to v0.3.37
+- *(deps)* update rust crate serde to 1.0.198
+- *(deps)* update rust crate serde_json to 1.0.115
+- *(deps)* update rust crate serde_yaml to 0.9.33
+
+### Other
+
+- rework how renovate updates rust deps
+- *(deps)* run cargo update to get past issues renovate is having
+- *(deps)* update rust
+- *(deps)* pin debian docker tag to 2424c18
+- *(deps)* update dependency release-plz to v0.3.139
+- Merge pull request #74 from sdwilsh/renovate/docker-login-action-digest
+- *(deps)* pin dependencies
+- Merge pull request #70 from sdwilsh/renovate/marcoieni-release-plz-action-0.x
+- Merge pull request #65 from sdwilsh/renovate/yamllint-1.x
+- Merge pull request #61 from sdwilsh/renovate/devcontainers-ci-0.x
+- *(deps)* update devcontainers/ci action to v0.3.1900000417
+- *(deps)* update dependency renovatebot/renovate to v41
+- *(deps)* update dependency renovatebot/renovate to v40
+- *(deps)* update dependency renovatebot/renovate to v39.185.0
+- *(deps)* update dependency renovatebot/renovate to v39.170.1
+- *(deps)* update dependency renovatebot/renovate to v39.164.0
+- *(deps)* update dependency rust-lang/rust to v1.84.1
+- Set timezone for renovate
+- Migrate renovate config
+- Replace deprecated `serde_yaml`
+- Setup automerge for a bunch of things
+- Fix formatting
+- Auto-merge sozu updates
+- *(deps)* update dependency renovatebot/renovate to v39.103.0
+- Fix broken merge that resulted in duplicate workflow definitions
+- Move build/test CI to devcontainer
+- Fix lint issues
+- Add linting using `just` instead of Earthly
+- Add a devcontainer with associated CI
+- *(deps)* update earthly/earthly docker tag to v0.8.12
+- *(deps)* update earthly/actions-setup action to v1.0.12
+- Merge pull request #35 from sdwilsh/renovate/earthly-earthly-0.x
+- *(deps)* update earthly/earthly docker tag to v0.8.6
+- Merge pull request #32 from sdwilsh/renovate/anyhow-1.x
+- *(deps)* update earthly/earthly docker tag to v0.8.5
+# Changelog
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
