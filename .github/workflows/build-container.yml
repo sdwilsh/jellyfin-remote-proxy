@@ -99,7 +99,10 @@ jobs:
   build_push_manifest:
     if: |
       github.event_name != 'pull_request' &&
-      github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+      (
+        github.ref == format('refs/heads/{0}', github.event.repository.default_branch) ||
+        startswith(github.ref, '/refs/tags/v')
+      )
 
     name: Build and push manifest
     needs:
