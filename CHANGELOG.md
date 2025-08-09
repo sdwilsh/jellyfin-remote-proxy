@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.6](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.5...v0.1.6) - 2025-08-09
+
+### Other
+
+- *(deps)* update dependency renovatebot/renovate to v41.60.2
+- *(deps)* update rust
+- *(deps)* update dependency renovatebot/renovate to v41.52.1
+
 ## [0.1.5](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.4...v0.1.5) - 2025-08-05
 
 ### Fixed
