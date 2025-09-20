@@ -4,7 +4,7 @@ COPY Cargo.toml /
 COPY Cargo.lock /
 COPY src src/
 
-FROM rust:1.89-slim-bookworm@sha256:21e2ac30e72a6d5b6d667b573eadad0578be9a5a99bac0b2b99b3d37795f90f9 AS chef
+FROM rust:1.90-slim-bookworm@sha256:0a694b60da1de10034671091330d628c88af06f9ea0cc87c654d5bc4b6c7e538 AS chef
 WORKDIR /app
 RUN --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
