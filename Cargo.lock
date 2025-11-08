@@ -1428,9 +1428,9 @@ dependencies = [
 
 [[package]]
 name = "sozu-command-lib"
-version = "1.1.0"
+version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e663928dab6c935953d6690027ce222c5c76682b4db60698005a74c04c04c980"
+checksum = "95102836eebde698a79501d404774dcdc2b24ece81f8b563a1f672b7c68ca7d7"
 dependencies = [
  "hex",
  "libc",
@@ -1458,9 +1458,9 @@ dependencies = [
 
 [[package]]
 name = "sozu-lib"
-version = "1.1.0"
+version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "009a507e5c6a233ca6994a0b8c6e47b7bb78510f79946c7965f1680ece1ac319"
+checksum = "ed8abee293bdaeea493e32ee8f2b33badd4c37e4d7bf1695d29fc87cc05ffb00"
 dependencies = [
  "anyhow",
  "cookie-factory",
