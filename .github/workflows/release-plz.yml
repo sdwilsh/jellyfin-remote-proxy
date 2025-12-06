@@ -22,10 +22,10 @@ jobs:
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
       - name: Run release-plz
-        uses: MarcoIeni/release-plz-action@1efcf74dfcd6e500990dad806e286899ae384064 # v0.5.119
+        uses: MarcoIeni/release-plz-action@487eb7b5c085a664d5c5ca05f4159bd9b591182a # v0.5.120
         with:
           # renovate: datasource=crate depName=release-plz versioning=semver
-          version: "0.3.149"
+          version: "0.3.150"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}
