@@ -1,7 +1,7 @@
-use std::{fs::File, net::IpAddr, net::Ipv4Addr, net::SocketAddrV4};
+use std::{net::IpAddr, net::Ipv4Addr, net::SocketAddrV4};
 
 use serde::Deserialize;
-use serde_yml::from_reader;
+use tokio::{fs::File, io::AsyncReadExt};
 
 #[derive(Debug, Deserialize)]
 pub struct Config {
@@ -42,9 +42,15 @@ impl Local {
     }
 }
 
-pub fn load(args: &[String]) -> Config {
+pub async fn load(args: &[String]) -> Result<Config, Box<dyn std::error::Error>> {
     let config_file = &args[1];
-    let f = File::open(config_file).expect("Unable to open config file!");
-    let deserialized: Config = from_reader(f).unwrap();
-    return deserialized;
+    let mut contents = String::new();
+    File::open(config_file)
+        .await
+        .expect("Unable to open config file!")
+        .read_to_string(&mut contents)
+        .await
+        .unwrap_or_else(|error| panic!("Unable to read config file {}!\n{}", config_file, error));
+    let deserialized: Config = serde_yml::from_str(&contents).unwrap();
+    Ok(deserialized)
 }
