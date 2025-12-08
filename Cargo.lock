@@ -708,7 +708,6 @@ dependencies = [
  "anyhow",
  "env_logger",
  "log 0.4.29",
- "nix",
  "serde",
  "serde_json",
  "serde_yml",

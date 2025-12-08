@@ -25,27 +25,20 @@ impl Remote {
 
 #[derive(Debug, Deserialize)]
 pub struct Local {
-    pub interface: String,
+    pub address: String,
     pub port: u16,
 }
 
 impl Local {
-    pub fn as_ip_addrs(&self) -> impl Iterator<Item = Ipv4Addr> + '_ {
-        return nix::ifaddrs::getifaddrs()
-            .expect("Unable to get system interfaces!")
-            .filter(|ifaddr| {
-                ifaddr.interface_name == self.interface.as_str()
-                    && ifaddr
-                        .address
-                        .is_some_and(|ss| ss.as_sockaddr_in().is_some())
-            })
-            .map(|ifaddr| Ipv4Addr::from(ifaddr.address.unwrap().as_sockaddr_in().unwrap().ip()));
+    pub fn as_ip_addr(&self) -> Ipv4Addr {
+        return self
+            .address
+            .parse()
+            .expect("Unable to parse supplied local ip address!  This should be an IP addrdes.");
     }
 
-    pub fn as_socket_addrs(&self) -> impl Iterator<Item = SocketAddrV4> + '_ {
-        return self
-            .as_ip_addrs()
-            .map(|ipaddr| SocketAddrV4::new(ipaddr, self.port));
+    pub fn as_socket_addr(&self) -> SocketAddrV4 {
+        return SocketAddrV4::new(self.as_ip_addr(), self.port);
     }
 }
 
