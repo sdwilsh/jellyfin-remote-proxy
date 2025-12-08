@@ -25,7 +25,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     discovery::start(discovery_response, &local_socket_address)
         .await
         .expect("Failed to setup discovery!");
-    proxy::run(&local_socket_address, &remote_socket_address)
+    proxy::run(&local_socket_address, remote_socket_address)
         .await
         .expect("Failed to proxy!");
     Ok(())
