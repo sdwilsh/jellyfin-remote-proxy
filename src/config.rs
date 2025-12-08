@@ -1,4 +1,4 @@
-use std::{net::IpAddr, net::Ipv4Addr, net::SocketAddrV4};
+use std::net::{IpAddr, Ipv4Addr, Ipv6Addr, SocketAddr, SocketAddrV4, SocketAddrV6};
 
 use serde::Deserialize;
 use tokio::{fs::File, io::AsyncReadExt};
@@ -25,20 +25,29 @@ impl Remote {
 
 #[derive(Debug, Deserialize)]
 pub struct Local {
-    pub address: String,
+    pub address: Option<String>,
     pub port: u16,
 }
 
 impl Local {
-    pub fn as_ip_addr(&self) -> Ipv4Addr {
-        return self
-            .address
-            .parse()
-            .expect("Unable to parse supplied local ip address!  This should be an IP addrdes.");
+    pub fn as_ip_addr(&self) -> Result<IpAddr, Box<dyn std::error::Error>> {
+        match &self.address {
+            None => Ok(IpAddr::V4(Ipv4Addr::UNSPECIFIED)),
+            Some(maybe_addr) => match maybe_addr.parse::<Ipv4Addr>() {
+                Ok(ipv4_addr) => Ok(IpAddr::V4(ipv4_addr)),
+                Err(_) => match maybe_addr.parse::<Ipv6Addr>() {
+                    Ok(ipv6_addr) => Ok(IpAddr::V6(ipv6_addr)),
+                    Err(e) => panic!("Unable to parse ip address '{}':\n{}", maybe_addr, e),
+                },
+            },
+        }
     }
 
-    pub fn as_socket_addr(&self) -> SocketAddrV4 {
-        return SocketAddrV4::new(self.as_ip_addr(), self.port);
+    pub fn as_socket_addr(&self) -> SocketAddr {
+        match self.as_ip_addr().unwrap() {
+            IpAddr::V4(addr) => SocketAddr::V4(SocketAddrV4::new(addr, self.port)),
+            IpAddr::V6(addr) => SocketAddr::V6(SocketAddrV6::new(addr, self.port, 0, 0)),
+        }
     }
 }
 
