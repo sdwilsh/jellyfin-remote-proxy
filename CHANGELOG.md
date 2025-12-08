@@ -1,11 +1,67 @@
 # Changelog
-
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [0.1.6](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.5...v0.1.6) - 2025-12-07
+
+### Fixed
+
+- *(deps)* update rust-deps ([#75](https://github.com/sdwilsh/jellyfin-remote-proxy/pull/75))
+
+### Other
+
+- Merge pull request #93 from sdwilsh/renovate/actions-checkout-digest
+- *(deps)* update dependency casey/just to v1.44.0
+- *(deps)* update dependency renovatebot/renovate to v42.39.0
+- *(deps)* update rust crate log to v0.4.29
+- *(deps)* update release-plz
+- *(deps)* update dependency renovatebot/renovate to v42.26.11
+- *(deps)* update release-plz
+- Merge pull request #89 from sdwilsh/renovate/debian-bookworm-slim
+- Merge pull request #91 from sdwilsh/renovate/docker-metadata-action-digest
+- Merge pull request #92 from sdwilsh/renovate/actions-checkout-5.x
+- Merge pull request #87 from sdwilsh/renovate/casey-just-1.x
+- Merge pull request #86 from sdwilsh/renovate/hadolint-hadolint-2.x
+- *(deps)* update dependency renovatebot/renovate to v42.19.3
+- *(deps)* update rust:1.91-slim-bookworm docker digest to c406439
+- *(deps)* update dependency renovatebot/renovate to v42.11.0
+- *(deps)* update rust
+- *(deps)* update dependency renovatebot/renovate to v42
+- *(deps)* update dependency renovatebot/renovate to v41.173.1
+- *(deps)* update sozu to v1.1.1
+- *(deps)* update rust:1.91-slim-bookworm docker digest to 81c9759
+- *(deps)* update sozu to v1.1.0
+- *(deps)* update dependency renovatebot/renovate to v41.168.1
+- *(deps)* update rust
+- *(deps)* update dependency renovatebot/renovate to v41.159.3
+- *(deps)* update rust:1.90-slim-bookworm docker digest to 64232e6
+- *(deps)* update dependency renovatebot/renovate to v41.152.2
+- *(deps)* update dependency renovatebot/renovate to v41.146.0
+- *(deps)* update release-plz
+- *(deps)* update dependency renovatebot/renovate to v41.135.3 ([#90](https://github.com/sdwilsh/jellyfin-remote-proxy/pull/90))
+- *(deps)* update rust:1.90-slim-bookworm docker digest to 3bee83b
+- *(deps)* update dependency renovatebot/renovate to v41.131.6
+- *(deps)* update rust
+- *(deps)* update dependency renovatebot/renovate to v41.119.5
+- *(deps)* update release-plz
+- *(deps)* update debian:bookworm-slim docker digest to df52e55
+- Merge pull request #82 from sdwilsh/renovate/debian-bookworm-slim
+- Merge pull request #84 from sdwilsh/renovate/hadolint-hadolint-2.x
+- *(deps)* update dependency marinatedconcrete/config to renovate-config-2.2.0
+- *(deps)* update dependency renovatebot/renovate to v41.97.7
+- *(deps)* update release-plz
+- *(deps)* update dependency renovatebot/renovate to v41.82.6
+- Merge pull request #81 from sdwilsh/renovate/actions-checkout-5.x
+- *(deps)* update release-plz
+- *(deps)* update dependency renovatebot/renovate to v41.75.0
+- *(deps)* update rust:1.89-slim-bookworm docker digest to 21e2ac3
+- *(deps)* update dependency renovatebot/renovate to v41.60.2
+- *(deps)* update rust
+- *(deps)* update dependency renovatebot/renovate to v41.52.1
 
 ## [0.1.5](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.4...v0.1.5) - 2025-08-05
 
@@ -94,70 +150,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - *(deps)* update earthly/earthly docker tag to v0.8.6
 - Merge pull request #32 from sdwilsh/renovate/anyhow-1.x
 - *(deps)* update earthly/earthly docker tag to v0.8.5
-# Changelog
-All notable changes to this project will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [Unreleased]
-
-## [0.1.6](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.5...v0.1.6) - 2025-12-07
-
-### Fixed
-
-- *(deps)* update rust-deps ([#75](https://github.com/sdwilsh/jellyfin-remote-proxy/pull/75))
-
-### Other
-
-- Merge pull request #93 from sdwilsh/renovate/actions-checkout-digest
-- *(deps)* update dependency casey/just to v1.44.0
-- *(deps)* update dependency renovatebot/renovate to v42.39.0
-- *(deps)* update rust crate log to v0.4.29
-- *(deps)* update release-plz
-- *(deps)* update dependency renovatebot/renovate to v42.26.11
-- *(deps)* update release-plz
-- Merge pull request #89 from sdwilsh/renovate/debian-bookworm-slim
-- Merge pull request #91 from sdwilsh/renovate/docker-metadata-action-digest
-- Merge pull request #92 from sdwilsh/renovate/actions-checkout-5.x
-- Merge pull request #87 from sdwilsh/renovate/casey-just-1.x
-- Merge pull request #86 from sdwilsh/renovate/hadolint-hadolint-2.x
-- *(deps)* update dependency renovatebot/renovate to v42.19.3
-- *(deps)* update rust:1.91-slim-bookworm docker digest to c406439
-- *(deps)* update dependency renovatebot/renovate to v42.11.0
-- *(deps)* update rust
-- *(deps)* update dependency renovatebot/renovate to v42
-- *(deps)* update dependency renovatebot/renovate to v41.173.1
-- *(deps)* update sozu to v1.1.1
-- *(deps)* update rust:1.91-slim-bookworm docker digest to 81c9759
-- *(deps)* update sozu to v1.1.0
-- *(deps)* update dependency renovatebot/renovate to v41.168.1
-- *(deps)* update rust
-- *(deps)* update dependency renovatebot/renovate to v41.159.3
-- *(deps)* update rust:1.90-slim-bookworm docker digest to 64232e6
-- *(deps)* update dependency renovatebot/renovate to v41.152.2
-- *(deps)* update dependency renovatebot/renovate to v41.146.0
-- *(deps)* update release-plz
-- *(deps)* update dependency renovatebot/renovate to v41.135.3 ([#90](https://github.com/sdwilsh/jellyfin-remote-proxy/pull/90))
-- *(deps)* update rust:1.90-slim-bookworm docker digest to 3bee83b
-- *(deps)* update dependency renovatebot/renovate to v41.131.6
-- *(deps)* update rust
-- *(deps)* update dependency renovatebot/renovate to v41.119.5
-- *(deps)* update release-plz
-- *(deps)* update debian:bookworm-slim docker digest to df52e55
-- Merge pull request #82 from sdwilsh/renovate/debian-bookworm-slim
-- Merge pull request #84 from sdwilsh/renovate/hadolint-hadolint-2.x
-- *(deps)* update dependency marinatedconcrete/config to renovate-config-2.2.0
-- *(deps)* update dependency renovatebot/renovate to v41.97.7
-- *(deps)* update release-plz
-- *(deps)* update dependency renovatebot/renovate to v41.82.6
-- Merge pull request #81 from sdwilsh/renovate/actions-checkout-5.x
-- *(deps)* update release-plz
-- *(deps)* update dependency renovatebot/renovate to v41.75.0
-- *(deps)* update rust:1.89-slim-bookworm docker digest to 21e2ac3
-- *(deps)* update dependency renovatebot/renovate to v41.60.2
-- *(deps)* update rust
-- *(deps)* update dependency renovatebot/renovate to v41.52.1
 
 ## [0.1.2](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.1...v0.1.2) - 2024-03-06
 
