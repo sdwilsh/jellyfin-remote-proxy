@@ -1,10 +1,10 @@
-use std::net::{SocketAddr, SocketAddrV4};
+use std::net::SocketAddr;
 
 use async_http_proxy::http_connect_tokio;
 use tokio::net::TcpStream;
 
 pub async fn run(
-    local_address: &SocketAddrV4,
+    local_address: &SocketAddr,
     remote_address: &SocketAddr,
 ) -> Result<(), Box<dyn std::error::Error>> {
     let mut stream = TcpStream::connect(local_address)

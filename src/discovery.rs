@@ -1,7 +1,7 @@
 use std::net::IpAddr;
 use std::net::Ipv4Addr;
+use std::net::Ipv6Addr;
 use std::net::SocketAddr;
-use std::net::SocketAddrV4;
 use std::str;
 use tokio::net::UdpSocket;
 
@@ -63,7 +63,7 @@ pub async fn query_proxied_server(
 
 pub async fn start(
     discovery_response: DiscoveryResponse,
-    local_socket_address: &SocketAddrV4,
+    local_socket_address: &SocketAddr,
 ) -> Result<
     tokio::task::JoinHandle<Result<(), Box<dyn std::error::Error + Send>>>,
     Box<dyn std::error::Error>,
@@ -74,7 +74,10 @@ pub async fn start(
     })
     .expect("Unable to serialize local discovery response!");
 
-    let discovery_addr: SocketAddr = (IpAddr::V4(Ipv4Addr::UNSPECIFIED), DISCOVERY_PORT).into();
+    let discovery_addr: SocketAddr = match local_socket_address {
+        SocketAddr::V4(_) => (IpAddr::V4(Ipv4Addr::UNSPECIFIED), DISCOVERY_PORT).into(),
+        SocketAddr::V6(_) => (IpAddr::V6(Ipv6Addr::UNSPECIFIED), DISCOVERY_PORT).into(),
+    };
     let socket = UdpSocket::bind(discovery_addr)
         .await
         .expect("Could not bind to address for auto-discovery!");
