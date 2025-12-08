@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.7](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.6...v0.1.7) - 2025-12-08
 
+### Added
+
+- change from an interface to a list of ip to listen to ([#98](https://github.com/sdwilsh/jellyfin-remote-proxy/pull/98))
+
 ### Fixed
 
 - update changelog that somehow got very broken
