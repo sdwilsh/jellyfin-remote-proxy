@@ -4,7 +4,7 @@ edition = "2021"
 license = "AGPL-3.0"
 name = "jellyfin-remote-proxy"
 repository = "https://github.com/sdwilsh/jellyfin-remote-proxy"
-version = "0.1.8"
+version = "0.1.9"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
