@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.8](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.7...v0.1.8) - 2025-12-09
+
+### Added
+
+- push arch images on PRs for testing
+- do not require a local ip address
+
+### Other
+
+- drop use of http-async-proxy as it is not needed
+- use simpler proxy setup with tokio
+
 ## [0.1.7](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.6...v0.1.7) - 2025-12-08
 
 ### Added
