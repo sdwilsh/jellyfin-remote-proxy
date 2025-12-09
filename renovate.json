@@ -73,13 +73,11 @@
     {
       "automerge": true,
       "automergeType": "branch",
-      "groupName": "sozu",
-      "matchPackageNames": [
-        "/^sozu/"
+      "description": "Automatic digest merges",
+      "matchUpdateTypes": [
+        "digest"
       ],
-      "schedule": [
-        "after 4pm on friday"
-      ]
+      "minimumReleaseAge": "3 days"
     }
   ],
   "timezone": "America/Los_Angeles"
