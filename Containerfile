@@ -28,6 +28,14 @@ COPY --from=ctx . .
 RUN cargo build --release --bin jellyfin-remote-proxy
 
 FROM debian:bookworm-slim@sha256:b4aa902587c2e61ce789849cb54c332b0400fe27b1ee33af4669e1f7e7c3e22f AS runtime
+# In order to run a health check, we need curl.
+RUN --mount=type=cache,dst=/var/cache \
+    --mount=type=cache,dst=/var/log \
+    --mount=type=tmpfs,dst=/tmp \
+    apt-get update \
+    && apt-get -y install --no-install-recommends \
+        curl \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 COPY --from=builder /app/target/release/jellyfin-remote-proxy /usr/local/bin/jellyfin-remote-proxy
 ENTRYPOINT ["/usr/local/bin/jellyfin-remote-proxy"]
