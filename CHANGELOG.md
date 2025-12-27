@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.10](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.9...v0.1.10) - 2025-12-27
+
+### Other
+
+- *(deps)* update dependency renovatebot/renovate to v42.66.8
+- *(deps)* update rust crate serde_json to v1.0.147
+- *(deps)* update dependency renovatebot/renovate to v42.64.1
+- *(deps)* update rust
+- *(deps)* update dependency renovatebot/renovate to v42.52.2
+
 ## [0.1.9](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.8...v0.1.9) - 2025-12-09
 
 ### Added
