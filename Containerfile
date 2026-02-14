@@ -27,7 +27,7 @@ RUN cargo chef cook --release --recipe-path recipe.json
 COPY --from=ctx . .
 RUN cargo build --release --bin jellyfin-remote-proxy
 
-FROM debian:bookworm-slim@sha256:1371f816c47921a144436ca5a420122a30de85f95401752fd464d9d4e1e08271 AS runtime
+FROM debian:bookworm-slim@sha256:98f4b71de414932439ac6ac690d7060df1f27161073c5036a7553723881bffbe AS runtime
 # In order to run a health check, we need curl.
 RUN --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
