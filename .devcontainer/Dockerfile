@@ -1,4 +1,4 @@
-FROM rust:1.93-slim-bookworm@sha256:38d9e7c33a262bf1c58aecfbdf778205491d703a2196d4abf459e81cfe9f95e4
+FROM rust:1.93-slim-bookworm@sha256:5b9332190bb3b9ece73b810cd1f1e9f06343b294ce184bcb067f0747d7d333ea
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y install --no-install-recommends \
