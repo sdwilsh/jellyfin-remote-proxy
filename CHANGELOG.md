@@ -6,6 +6,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.10](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.9...v0.1.10) - 2026-02-28
+
+### Other
+
+- *(deps)* update dependency renovatebot/renovate to v43.46.0
+- *(deps)* update dependency renovatebot/renovate to v43.29.2
+- *(deps)* update release-plz
+- *(deps)* update dependency renovatebot/renovate to v43.14.1
+- *(deps)* update dependency renovatebot/renovate to v43.4.2 ([#112](https://github.com/sdwilsh/jellyfin-remote-proxy/pull/112))
+- *(deps)* update release-plz
+- *(deps)* update dependency renovatebot/renovate to v43
+- *(deps)* update release-plz ([#111](https://github.com/sdwilsh/jellyfin-remote-proxy/pull/111))
+- *(deps)* update dependency renovatebot/renovate to v42.92.3
+- *(deps)* update rust
+- *(deps)* update dependency renovatebot/renovate to v42.83.1
+- *(deps)* update dependency renovatebot/renovate to v42.76.4
+- *(deps)* update dependency renovatebot/renovate to v42.70.2
+- *(deps)* update rust crate serde_json to v1.0.148
+- *(deps)* update dependency renovatebot/renovate to v42.66.8
+- *(deps)* update rust crate serde_json to v1.0.147
+- *(deps)* update dependency renovatebot/renovate to v42.64.1
+- *(deps)* update rust
+- *(deps)* update dependency renovatebot/renovate to v42.52.2
+
 ## [0.1.9](https://github.com/sdwilsh/jellyfin-remote-proxy/compare/v0.1.8...v0.1.9) - 2025-12-09
 
 ### Added
