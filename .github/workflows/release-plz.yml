@@ -20,7 +20,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install Rust toolchain
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@89b12181fb390509a0842a86cc55eeb8eb928c1d # stable
       - name: Run release-plz
         uses: MarcoIeni/release-plz-action@f708778669256143d984cce4b23592637532e040 # v0.5.127
         with:
